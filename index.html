@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en" dir="ltr" id="htmlRoot">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+</style>
+    <title data-i18n="title">Intel Sustainability Timeline — Template</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body dir="ltr" id="bodyRoot">
+    <header class="site-header sticky-top">
+      <div class="container-fluid">
+        <div class="header-content d-flex justify-content-between align-items-center py-3">
+          <div class="brand">
+            <img src="https://pngimg.com/uploads/intel/intel_PNG3.png" width="90px" height="50px"/>
+          </div>
+          <nav class="top-meta d-flex gap-3 align-items-center">
+            <span class="eyebrow" data-i18n="sustainability">Sustainability</span>
+            
+            <!-- Language Selector -->
+            <div class="language-selector dropdown">
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-globe"></i> <span id="currentLang">EN</span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('en')">English</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ar')">العربية</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('es')">Español</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('fr')">Français</a></li>
+              </ul>
+            </div>
+
+            <!-- Subscribe Button -->
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#subscribeModal" data-i18n="subscribe">Subscribe</button>
+            <a href="#" class="cta btn btn-outline-primary btn-sm" data-i18n="learnMore">Learn More</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero py-5 text-center text-white">
+        <div class="container">
+          <h1 class="display-4 mb-4 fw-bold" data-i18n="heroTitle">Sustainability Through The Ages</h1>
+          <p class="lead fs-5 mb-4" data-i18n="heroDesc">Explore Intel's journey through time. A visual timeline of key milestones and targets toward a more sustainable future.</p>
+        </div>
+      </section>
+
+  
+
+      <!-- Timeline Section -->
+      <section class="timeline-wrap py-5" aria-label="Sustainability timeline">
+
+
+        <div class="timeline" id="timeline">
+
+
+          <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://plus.unsplash.com/premium_photo-1674758665369-c02f4737b804?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AI-generated concept image 1" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">1968</time>
+                <h3 class="milestone-title" data-i18n="milestone_1968_title">Establishment</h3>
+              </div>
+              <div class="details" data-i18n="milestone_1968_desc">
+                Robert Noyce and Gordon Moore form a new company that would let them pursue innovation on their own terms.
+              </div>
+            </div>
+          </article>
+
+
+          <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://www.microchipusa.com/_next/image?url=%2Fmedia%2Fintel-microprocessor.webp&w=3840&q=75" alt="AI-generated concept image 2" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">1971</time>
+                <h3 class="milestone-title" data-i18n="milestone_1971_title">World's First</h3>
+              </div>
+              <div class="details" data-i18n="milestone_1971_desc">Intel introduces the world's first electronically programmable microprocessor, the 4004.</div>
+            </div>
+          </article>
+
+          <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://images.ctfassets.net/ytpxmi3h6kca/7yr75FIWC5RKRFZczddFi4/e0b038178381bb6f3db17cbbfc1c21bd/INT-0586-0034-0001.jpg?fm=jpg&fl=progressive&q=90&w=898&h=720" alt="AI-generated concept image 3" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">1978</time>
+                <h3 class="milestone-title" data-i18n="milestone_1978_title">10-Year Anniversary</h3>
+              </div>
+              <div class="details" data-i18n="milestone_1978_desc">
+               Intel launches one landmark processor, the 8086 and initiates a new fellowship program to foster still more R&D
+                </div>
+            </div>
+          </article>
+
+          <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://images.unsplash.com/photo-1646627928017-969b372e2727?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AI-generated concept image 4" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">1979</time>
+                <h3 class="milestone-title" data-i18n="milestone_1979_title">Fame & Fortune</h3>
+              </div>
+              <div class="details" data-i18n="milestone_1979_desc">
+                Intel makes its debut on the Fortune 500 list
+              </div>
+            </div>
+          </article>
+
+
+          <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://retropaq.com/wp-content/uploads/2018/12/Compaq-Portable-III-Ad-1.jpg" alt="AI-generated concept image 4" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">1983</time>
+                <h3 class="milestone-title" data-i18n="milestone_1983_title">Comeback</h3>
+              </div>
+              <div class="details" data-i18n="milestone_1983_desc">
+                Intel bounces back from the two-year recession by opening its largest fabrication facility up to that point, 
+                powering the landmark Compaq Portable computer and introducing new products that would lead revenues to exceed $1 billion for the first time in company history.
+              </div>
+            </div>
+          </article>
+
+
+           <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://plus.unsplash.com/premium_photo-1681426669771-d2113672a49b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AI-generated concept image 4" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">1986</time>
+                <h3 class="milestone-title" data-i18n="milestone_1986_title">Hardship Again</h3>
+              </div>
+              <div class="details" data-i18n="milestone_1986_desc">
+                Intel faces the toughest economic year in its history as the semiconductor industry remains depressed. However, the company lays the groundwork for a more prosperous future, entering the market for ASICs and developing products with record-setting capabilities 
+              </div>
+            </div>
+          </article>
+
+
+
+
+
+          <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://www.techi.com/wp-content/uploads/2025/05/20250526-%E2%80%98Give-This-Underdog-Some-Love-Says-Top-Investor-About-Intel-Stock.webp" alt="AI-generated concept image 4" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">1992</time>
+                <h3 class="milestone-title" data-i18n="milestone_1992_title">The Biggest</h3>
+              </div>
+              <div class="details" data-i18n="milestone_1992_desc">
+                Intel is declared the biggest semiconductor manufacturer in the U.S., issued its first cash dividend to stockholders and increased its presence in retail outlets all in the same year.
+              </div>
+            </div>
+          </article>
+
+
+
+
+          <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLVEz_C3cVr9JJefTtenKIp8-ALnOIpAZECg&s" alt="AI-generated concept image 4" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">1993</time>
+                <h3 class="milestone-title" data-i18n="milestone_1993_title">Any Volunteers?</h3>
+              </div>
+              <div class="details" data-i18n="milestone_1993_desc">
+                Intel honored its 25th anniversary by launching its employee volunteer program, Intel Involved, which brought a new structure and permanence to employees’ efforts to help their communities
+              </div>
+            </div>
+          </article>
+
+
+           <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://etimg.etb2bimg.com/photo/90249015.cms" alt="AI-generated concept image 4" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">1995</time>
+                <h3 class="milestone-title" data-i18n="milestone_1995_title">Living on the Web</h3>
+              </div>
+              <div class="details" data-i18n="milestone_1995_desc">
+                Intel launches its first website to help customers learn more about the company and its products.
+              </div>
+            </div>
+          </article>
+
+
+          <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://plus.unsplash.com/premium_photo-1681426701125-bed484a8c829?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AI-generated concept image 4" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">2005</time>
+                <h3 class="milestone-title" data-i18n="milestone_2005_title">Another First</h3>
+              </div>
+              <div class="details" data-i18n="milestone_2005_desc">
+                Intel releases its first multicore processor, dramatically advancing the computing power available in a single package.
+              </div>
+            </div>
+          </article>
+
+
+
+          <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://iconape.com/wp-content/png_logo_vector/intel-leap-ahead.png" alt="AI-generated concept image 4" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">2006</time>
+                <h3 class="milestone-title" data-i18n="milestone_2006_title">Brand New Look</h3>
+              </div>
+              <div class="details" data-i18n="milestone_2006_desc">
+                Intel adopts a new logo — the company's biggest branding change since 1969 — signifying the company's commitment to pushing the envelope of what was possible from technology.
+              </div>
+            </div>
+          </article>
+
+
+
+          <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://cdn.mos.cms.futurecdn.net/8BHQFHBNDTS7hwEbVbnMGZ.jpg" alt="AI-generated concept image 4" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">2011</time>
+                <h3 class="milestone-title" data-i18n="milestone_2011_title">Plus Ultra</h3>
+              </div>
+              <div class="details" data-i18n="milestone_2011_desc">
+                Intel forms a new Mobile Communications Group, introduces the first generation of Thunderbolt technology and potentially saves the PC with the Ultrabook.
+              </div>
+            </div>
+          </article>
+
+
+          <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://www.professional-multirotors.com/wp-content/uploads/sites/6/2021/03/20210317_083704.jpg" alt="AI-generated concept image 4" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">2016</time>
+                <h3 class="milestone-title" data-i18n="milestone_2016_title">Aerial Prowess</h3>
+              </div>
+              <div class="details" data-i18n="milestone_2016_desc">
+                Intel's launches its first commercially available drone, the Falcon 8+, which offers easy remote access to areas humans would have trouble reaching.
+              </div>
+            </div>
+          </article>
+
+
+
+
+
+          <article class="milestone" tabindex="0">
+            <img class="milestone-image" src="https://plus.unsplash.com/premium_photo-1683120974913-1ef17fdec2a8?q=80&w=663&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AI-generated concept image 4" />
+            <div class="milestone-body">
+              <div class="milestone-head">
+                <time class="milestone-year">2020</time>
+                <h3 class="milestone-title" data-i18n="milestone_2020_title">Pandemic Heroes</h3>
+              </div>
+              <div class="details" data-i18n="milestone_2020_desc">
+                Intel releases the 11th generation Intel Core processor — and emphasizes ways its existing products could help the millions of people suddenly working and learning from home during the pandemic.
+              </div>
+            </div>
+          </article>
+
+
+
+
+        </div>
+      </section>
+
+
+          <!-- Three-Column Features Section with Icons -->
+      <section class="features py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-5 fw-bold" style="color: #000000;"data-i18n="featuresTitle">Our Sustainability Pillars</h2>
+          <div class="row g-4">
+            <!-- Innovation -->
+            <div class="col-md-4">
+              <div class="feature-card text-center p-4 h-100 card border-0 shadow-sm">
+                <div class="feature-icon mb-3">
+                  <i class="fas fa-lightbulb fa-3x text-primary"></i>
+                </div>
+                <h3 class="h5 mb-3 fw-bold" data-i18n="innovation">Innovation</h3>
+                <p  data-i18n="innovationDesc" >Driving technological advancement to create more efficient and sustainable solutions for tomorrow.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="setFeatureContent('innovation')" data-i18n="learnMore">Learn More</button>
+              </div>
+            </div>
+
+            <!-- Environment -->
+            <div class="col-md-4">
+              <div class="feature-card text-center p-4 h-100 card border-0 shadow-sm">
+                <div class="feature-icon mb-3">
+                  <i class="fas fa-leaf fa-3x" style="color: #28a745;"></i>
+                </div>
+                <h3 class="h5 mb-3 fw-bold" data-i18n="environment">Environment</h3>
+                <p data-i18n="environmentDesc">Committed to reducing our carbon footprint and protecting the planet for future generations.</p>
+                <button class="btn btn-outline-success mt-auto" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="setFeatureContent('environment')" data-i18n="learnMore">Learn More</button>
+              </div>
+            </div>
+
+            <!-- Community -->
+            <div class="col-md-4">
+              <div class="feature-card text-center p-4 h-100 card border-0 shadow-sm">
+                <div class="feature-icon mb-3">
+                  <i class="fas fa-handshake fa-3x" style="color: #dc3545;"></i>
+                </div>
+                <h3 class="h5 mb-3 fw-bold" data-i18n="community">Community</h3>
+                <p data-i18n="communityDesc">Empowering communities through education, jobs, and programs that make a real difference.</p>
+                <button class="btn btn-outline-danger mt-auto" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="setFeatureContent('community')" data-i18n="learnMore">Learn More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Subscribe Modal -->
+    <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title fw-bold" id="subscribeModalLabel" data-i18n="subscribeTitle">Join Our Sustainability Newsletter</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p data-i18n="subscribeDesc">Stay updated with the latest news and updates on our sustainability initiatives.</p>
+            <form id="subscribeForm" aria-label="Subscription form">
+              <div class="mb-3">
+                <label for="email" class="form-label" data-i18n="emailLabel">Email Address</label>
+                <input 
+                  type="email" 
+                  class="form-control" 
+                  id="email" 
+                  name="email"
+                  placeholder="you@example.com"
+                  required 
+                  aria-required="true"
+                  aria-describedby="emailHelp"
+                />
+                <div id="emailHelp" class="form-text" data-i18n="emailHelp">We'll never share your email with anyone else.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="fullname" class="form-label" data-i18n="fullNameLabel">Full Name</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="fullname" 
+                  name="fullname"
+                  placeholder="John Doe"
+                  required 
+                  aria-required="true"
+                />
+              </div>
+
+              <div class="mb-3">
+                <div class="form-check">
+                  <input 
+                    class="form-check-input" 
+                    type="checkbox" 
+                    id="agreeTerms" 
+                    name="agreeTerms"
+                    required
+                    aria-required="true"
+                  />
+                  <label class="form-check-label" for="agreeTerms" data-i18n="agreeTerms">
+                    I agree to receive updates about sustainability initiatives
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100" data-i18n="submitBtn">Subscribe Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Details Modal -->
+    <div class="modal fade" id="featureModal" tabindex="-1" aria-labelledby="featureModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title fw-bold" id="featureModalLabel">Feature Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="featureContent">
+            <!-- Content will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h5 class="mb-3 fw-bold" data-i18n="aboutIntel">About Intel</h5>
+            <p class="small" data-i18n="footerAbout">Intel is committed to delivering innovative computing solutions that drive sustainability and create positive impact globally.</p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="mb-3 fw-bold" data-i18n="quickLinks">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none hover-link" data-i18n="home">Home</a></li>
+              <li><a href="#" class="text-decoration-none hover-link" data-i18n="about">About</a></li>
+              <li><a href="#" class="text-decoration-none hover-link" data-i18n="contact">Contact</a></li>
+              <li><a href="#" class="text-decoration-none hover-link" data-i18n="privacy">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5 class="mb-3 fw-bold" data-i18n="followUs">Follow Us</h5>
+            <div class="social-links">
+              <a href="#" class="btn btn-sm btn-outline-light me-2" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-light me-2" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-light me-2" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-light" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4 border-secondary">
+        <div class="text-center small">
+          <p data-i18n="copyright">&copy; 2026 Intel Corporation. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
