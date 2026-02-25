@@ -559,6 +559,10 @@ document.addEventListener('DOMContentLoaded', function() {
   initLanguageChangeMonitor();
   
   console.log('🚀 Auto-language detection & RTL sync activated');
+  // Initialize attendance features (counts, progress, localStorage)
+  if (typeof initializeAttendance === 'function') {
+    initializeAttendance();
+  }
 });
 
 /**
@@ -752,4 +756,133 @@ function applyRTL(isRTL, lang = 'ar') {
   // Trigger RTL-specific styles
   document.body.classList.toggle('rtl-mode', isRTL);
   console.log(`↔️ RTL mode: ${isRTL ? 'ON' : 'OFF'}`);
+}
+
+// --------------------------
+// Attendance / Check-in Logic
+// --------------------------
+const ATTENDANCE_KEY = 'attendanceData';
+const ATTENDANCE_GOAL = 50;
+
+function initializeAttendance() {
+  const form = document.getElementById('checkInForm');
+  if (form) form.addEventListener('submit', handleCheckInSubmit);
+  loadAttendanceFromStorage();
+  updateUIFromData();
+}
+
+function loadAttendanceFromStorage() {
+  const saved = localStorage.getItem(ATTENDANCE_KEY);
+  if (saved) {
+    try {
+      window.attendanceData = JSON.parse(saved);
+    } catch (e) {
+      window.attendanceData = { total: 0, teams: { 'Water Wise': 0, 'Net Zero': 0, 'Renewables': 0 }, attendees: [] };
+    }
+  } else {
+    window.attendanceData = { total: 0, teams: { 'Water Wise': 0, 'Net Zero': 0, 'Renewables': 0 }, attendees: [] };
+  }
+}
+
+function saveAttendanceToStorage() {
+  localStorage.setItem(ATTENDANCE_KEY, JSON.stringify(window.attendanceData));
+}
+
+function handleCheckInSubmit(e) {
+  e.preventDefault();
+  const nameEl = document.getElementById('attendeeName');
+  const teamEl = document.getElementById('teamSelect');
+  if (!nameEl || !teamEl) return;
+  const name = nameEl.value.trim();
+  const team = teamEl.value;
+  if (!name) {
+    alert('Please enter a name to check in.');
+    return;
+  }
+
+  const data = window.attendanceData || { total: 0, teams: { 'Water Wise': 0, 'Net Zero': 0, 'Renewables': 0 }, attendees: [] };
+  const entry = { name, team, time: new Date().toISOString() };
+  data.attendees.push(entry);
+  data.total = data.attendees.length;
+  data.teams[team] = (data.teams[team] || 0) + 1;
+  window.attendanceData = data;
+  saveAttendanceToStorage();
+  updateUIFromData();
+
+  // reset form
+  e.target.reset();
+}
+
+function updateUIFromData() {
+  const data = window.attendanceData || { total: 0, teams: {}, attendees: [] };
+  const totalEl = document.getElementById('totalCount');
+  const waterEl = document.getElementById('waterCount');
+  const netEl = document.getElementById('netCount');
+  const renewEl = document.getElementById('renewCount');
+
+  if (totalEl) totalEl.textContent = data.total || 0;
+  if (waterEl) waterEl.textContent = data.teams['Water Wise'] || 0;
+  if (netEl) netEl.textContent = data.teams['Net Zero'] || 0;
+  if (renewEl) renewEl.textContent = data.teams['Renewables'] || 0;
+
+  updateProgressBar();
+  renderAttendeeList();
+  showCelebrationIfNeeded();
+}
+
+function renderAttendeeList() {
+  const ul = document.getElementById('attendeeList');
+  if (!ul) return;
+  ul.innerHTML = '';
+  const data = window.attendanceData || { attendees: [] };
+  // show newest first
+  data.attendees.slice().reverse().forEach(att => {
+    const li = document.createElement('li');
+    li.className = 'list-group-item d-flex justify-content-between align-items-center';
+    const time = new Date(att.time);
+    li.innerHTML = `<div><strong>${escapeHtml(att.name)}</strong> <small class="text-muted">(${escapeHtml(att.team)})</small></div><div class="small text-muted">${time.toLocaleTimeString()}</div>`;
+    ul.appendChild(li);
+  });
+}
+
+function updateProgressBar() {
+  const total = (window.attendanceData && window.attendanceData.total) || 0;
+  const percent = Math.min(100, Math.round((total / ATTENDANCE_GOAL) * 100));
+  const bar = document.getElementById('progressBar');
+  if (bar) {
+    bar.style.width = percent + '%';
+    bar.textContent = percent + '%';
+  }
+  const txt = document.getElementById('progressText');
+  if (txt) txt.textContent = `${total} / ${ATTENDANCE_GOAL}`;
+}
+
+function showCelebrationIfNeeded() {
+  const total = (window.attendanceData && window.attendanceData.total) || 0;
+  const el = document.getElementById('celebration');
+  if (!el) return;
+  if (total >= ATTENDANCE_GOAL) {
+    const winner = getWinningTeamName();
+    el.classList.remove('d-none');
+    el.innerHTML = `Goal reached! Congratulations to <strong>${escapeHtml(winner)}</strong>! 🎉`;
+  } else {
+    el.classList.add('d-none');
+    el.innerHTML = '';
+  }
+}
+
+function getWinningTeamName() {
+  const teams = (window.attendanceData && window.attendanceData.teams) || {};
+  const entries = Object.entries(teams);
+  if (entries.length === 0) return '';
+  entries.sort((a, b) => b[1] - a[1]);
+  const max = entries[0][1];
+  const winners = entries.filter(e => e[1] === max).map(e => e[0]);
+  return winners.length === 1 ? winners[0] : winners.join(' & ');
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"]+/g, function (s) {
+    return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[s];
+  });
 }

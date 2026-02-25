@@ -312,6 +312,70 @@
           </div>
         </div>
       </section>
+
+      <!-- Attendance Check-In Section -->
+      <section class="attendance py-5 bg-white">
+        <div class="container">
+          <h2 class="text-center mb-4 fw-bold" style="color: #dc3545;">Event Check-In</h2>
+          <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+              <form id="checkInForm" class="card p-4 shadow-sm" aria-label="Attendance check-in form">
+                <div class="mb-3">
+                  <label for="attendeeName" class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="attendeeName" placeholder="Name" required />
+                </div>
+                <div class="mb-3">
+                  <label for="teamSelect" class="form-label">Select Team</label>
+                  <select id="teamSelect" class="form-select" required>
+                    <option value="Water Wise">Team Water Wise</option>
+                    <option value="Net Zero">Team Net Zero</option>
+                    <option value="Renewables">Team Renewables</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100" id="checkInBtn">Check In</button>
+              </form>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card p-3 shadow-sm">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div>
+                    <h5 class="mb-0">Total Attendees</h5>
+                    <div class="h2 fw-bold" id="totalCount">0</div>
+                  </div>
+                  <div style="width:60%;">
+                    <div class="progress" style="height:18px;">
+                      <div id="progressBar" class="progress-bar" role="progressbar" style="width:0%">0%</div>
+                    </div>
+                    <div class="small text-muted mt-2" id="progressText">0 / 50</div>
+                  </div>
+                </div>
+
+                <div class="team-counters d-flex gap-3 mb-3">
+                  <div class="flex-fill text-center p-2 border rounded">
+                    <div class="small text-muted">Team Water Wise</div>
+                    <div class="h4 fw-bold" id="waterCount">0</div>
+                  </div>
+                  <div class="flex-fill text-center p-2 border rounded">
+                    <div class="small text-muted">Team Net Zero</div>
+                    <div class="h4 fw-bold" id="netCount">0</div>
+                  </div>
+                  <div class="flex-fill text-center p-2 border rounded">
+                    <div class="small text-muted">Team Renewables</div>
+                    <div class="h4 fw-bold" id="renewCount">0</div>
+                  </div>
+                </div>
+
+                <div id="celebration" class="alert alert-success d-none" role="status"></div>
+
+                <h6 class="mt-3 mb-2">Attendees</h6>
+                <ul id="attendeeList" class="list-group" style="max-height:220px;overflow:auto;"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <!-- Subscribe Modal -->

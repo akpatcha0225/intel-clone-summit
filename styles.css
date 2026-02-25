@@ -702,4 +702,21 @@ html[dir="rtl"] .accordion-button {
   }
 }
 
+/* Attendance section styles */
+.attendance .card {
+  border-radius: 12px;
+}
+.attendance .progress {
+  background: #e9ecef;
+}
+.attendance .progress-bar {
+  background: linear-gradient(90deg, var(--intel-blue), #28a745);
+}
+.attendance .team-counters .border {
+  background: #ffffff;
+}
+.attendance .list-group-item .text-muted {
+  font-size: 0.85rem;
+}
+
 
